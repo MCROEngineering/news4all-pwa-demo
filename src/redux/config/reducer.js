@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-// import UserReducer from 'redux/modules/user/reducer';
+import NewsReducer from 'redux/modules/news/reducer';
 
 const reducers = {
-  // user: UserReducer,
+  news: NewsReducer,
 };
 
 export default combineReducers(reducers);

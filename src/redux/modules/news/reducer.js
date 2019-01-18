@@ -1,9 +1,5 @@
-import config from 'config';
 import { getApiStatuses } from 'utils/redux';
-import { moveArrayElementToFirstPosition } from 'utils/common';
 import * as c from './constants';
-
-const { userTypes: { ROBOT } } = config;
 
 const initialStatuses = {
   request: false,
@@ -22,37 +18,24 @@ const initialState = {
 const userReducer = (state = initialState, action = {}) => {
   switch (action.type) {
 
-    case c.GET_ALL_USERS.REQUEST:
+    case c.GET_ALL_NEWS.REQUEST:
       return {
         ...state,
         allApi: getApiStatuses('request'),
       };
-    case c.GET_ALL_USERS.SUCCESS: {
-      const { data } = action.payload;
-
-      data.map((user) => {
-        const userToReturn = user;
-
-        if (user.title === ROBOT) {
-          userToReturn.firstName = 'Unassigned';
-          userToReturn.lastName = '';
-        }
-        return userToReturn;
-      });
-
-      const unassignedItem = data.filter(user => user.title === ROBOT);
-      const dataToReturn = moveArrayElementToFirstPosition(data, unassignedItem[0]);
+    case c.GET_ALL_NEWS.SUCCESS: {
+      const { articles } = action.payload;
 
       return {
         ...state,
         all: {
           ...state.all,
-          data: dataToReturn,
+          data: articles,
         },
         allApi: getApiStatuses('success'),
       };
     }
-    case c.GET_ALL_USERS.FAILURE:
+    case c.GET_ALL_NEWS.FAILURE:
       return {
         ...state,
         allApi: getApiStatuses('failure'),

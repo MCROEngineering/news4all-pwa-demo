@@ -7,8 +7,9 @@
 }
 
 .logo {
-  width: 50px;
-  height: auto;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5em;
 }
 
 @keyframes App-logo-spin {

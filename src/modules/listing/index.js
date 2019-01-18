@@ -1,18 +1,17 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import newsState from 'redux/modules/news';
+
 import Listing from './Listing';
 
 const mapStateToProps = state => ({
-  // apiStatus: rfpState.selectors.currentApi(state),
-  // currentRFP: rfpState.selectors.currentRFP(state),
-  // updateRFPApi: rfpState.selectors.updateApi(state),
+  all: newsState.selectors.all(state),
 });
 
 const mapActionsToProps = dispatch =>
   bindActionCreators({
-    // getOneRFP: rfpState.actions.getOne,
-    // removeRFP: rfpState.actions.removeOne,
+    getNews: newsState.actions.getNews,
   }, dispatch);
 
 export default connect(mapStateToProps, mapActionsToProps)(Listing);

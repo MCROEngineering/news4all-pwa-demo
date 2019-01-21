@@ -3,13 +3,25 @@
 }
 
 .main {
-  padding: 1em 0;
+  border-top: 1px solid lightgray;
+  padding: 5em 0;
 }
 
 .logo {
   text-decoration: none;
   color: inherit;
   font-size: 1.5em;
+}
+
+.listing {
+  margin: auto;
+  max-width: 680px;
+}
+
+.listing-item {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 1em;
 }
 
 @keyframes App-logo-spin {

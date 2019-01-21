@@ -11,19 +11,21 @@ class Listing extends Component {
   render() {
     const { all: { data } } = this.props;
 
-    console.log('Data: ', data);
-
     return (
-      <div>
-        Listing
+      <div className="listing">
         {data.map((item, index) => {
-          const { title, description, author } = item;
+          const { title, description, author, urlToImage } = item;
 
           return (
-            <div key={index}>
-              <h3>{title}</h3>
-              <p>{description}</p>
-              <p>by {author}</p>
+            <div className="listing-item" key={index}>
+              <div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <p>by {author}</p>
+              </div>
+              <div>
+                {urlToImage && <img width="170" src={urlToImage} alt="" />}
+              </div>
             </div>
           )
         })}

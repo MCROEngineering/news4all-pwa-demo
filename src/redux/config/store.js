@@ -1,6 +1,7 @@
 import { applyMiddleware, createStore, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
+import { persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import { history } from 'utils/history';
 
@@ -48,5 +49,8 @@ if (module.hot) {
     store.replaceReducer(reducer);
   });
 }
+
+persistStore(store);
+
 export default store;
 

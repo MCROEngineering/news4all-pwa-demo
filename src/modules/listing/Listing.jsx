@@ -24,10 +24,10 @@ class Listing extends Component {
                   <h3>{title}</h3>
                 </Link>
                 <p>{description}</p>
-                <div>by {author}</div>
+                <p>{author && `by ${author}`}</p>
               </div>
               <div>
-                {urlToImage && <img width="170" src={urlToImage} alt="" />}
+                {urlToImage && <img src={urlToImage} alt="" />}
               </div>
             </div>
           )

@@ -30,11 +30,10 @@ class Item extends Component {
     if (itemToRender) {
       const { title, content, author, url, urlToImage } = itemToRender;
 
-
       return (
         <div className="item-details">
           <div>
-            {urlToImage && <img width="700" src={urlToImage} alt="" />}
+            {urlToImage && <img src={urlToImage} alt="" />}
           </div>
           <div>
             <h3>{title}</h3>

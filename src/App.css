@@ -33,9 +33,34 @@
   border-bottom: 1px solid lightgray;
 }
 
+.listing-item:first-child {
+  padding: 0;
+}
+
+.listing-item:last-child {
+  border-bottom: 0;
+}
+
+.listing-item img {
+  max-width: 170px;
+}
+
 .item-details {
   margin: auto;
   max-width: 680px;
+}
+
+.item-details img {
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .listing-item {
+    flex-wrap: wrap-reverse;
+  }
+  .listing-item img {
+    max-width: 100%;
+  }
 }
 
 @keyframes App-logo-spin {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Listing extends Component {
@@ -19,7 +20,9 @@ class Listing extends Component {
           return (
             <div className="listing-item" key={index}>
               <div>
-                <h3>{title}</h3>
+                <Link to={`/item/${index}`}>
+                  <h3>{title}</h3>
+                </Link>
                 <p>{description}</p>
                 <p>by {author}</p>
               </div>

@@ -3,16 +3,15 @@ import { bindActionCreators } from 'redux';
 
 import Item from './Item';
 
+import newsState from 'redux/modules/news';
+
 const mapStateToProps = state => ({
-  // apiStatus: rfpState.selectors.currentApi(state),
-  // currentRFP: rfpState.selectors.currentRFP(state),
-  // updateRFPApi: rfpState.selectors.updateApi(state),
+  all: newsState.selectors.all(state),
 });
 
 const mapActionsToProps = dispatch =>
   bindActionCreators({
-    // getOneRFP: rfpState.actions.getOne,
-    // removeRFP: rfpState.actions.removeOne,
+    getNews: newsState.actions.getNews,
   }, dispatch);
 
 export default connect(mapStateToProps, mapActionsToProps)(Item);

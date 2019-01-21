@@ -1,14 +1,14 @@
 {
   "short_name": "News4All",
-  "name": "News4All PWA Tutorial",
+  "name": "News4All",
   "icons": [
     {
-      "src": "icon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "icon192x192.png",
+      "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "homescreen.png",
+      "src": "icon512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

@@ -28,9 +28,9 @@
 }
 
 .listing-item {
+  padding: 1em 0;
   display: flex;
   border-bottom: 1px solid lightgray;
-  margin-bottom: 1em;
 }
 
 .item-details {

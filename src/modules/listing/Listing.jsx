@@ -24,7 +24,7 @@ class Listing extends Component {
                   <h3>{title}</h3>
                 </Link>
                 <p>{description}</p>
-                <p>by {author}</p>
+                <div>by {author}</div>
               </div>
               <div>
                 {urlToImage && <img width="170" src={urlToImage} alt="" />}

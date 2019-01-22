@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { replaceHttpWithHttps } from 'utils/urlParser';
+import Img from 'components/Img';
 
 class Listing extends Component {
   static refresh() {
@@ -43,7 +43,7 @@ class Listing extends Component {
               <p>{author && `by ${author}`}</p>
             </div>
             <div>
-              {urlToImage && <img src={replaceHttpWithHttps(urlToImage)} alt="" />}
+              <Img src={urlToImage} />
             </div>
           </div>
         )
@@ -65,7 +65,7 @@ class Listing extends Component {
       return (
         <div className="listing-info">
           <span className="updated-at"> Updated: {updatedAt}</span>
-          <i onClick={() => Listing.refresh()} className="fas fa-sync-alt" />
+          <i title="Reload news" onClick={() => Listing.refresh()} className="fas fa-sync-alt" />
         </div>
       )
     }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { history } from 'utils/history';
-import { replaceHttpWithHttps } from 'utils/urlParser';
+
+import Img from 'components/Img';
 
 class Item extends Component {
   static goBack() {
@@ -27,7 +28,7 @@ class Item extends Component {
       return (
         <div>
           <div>
-            {urlToImage && <img src={replaceHttpWithHttps(urlToImage)} alt="" />}
+            <Img src={urlToImage} />
           </div>
           <div>
             <h3>{title}</h3>

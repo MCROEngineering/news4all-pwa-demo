@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { replaceHttpWithHttps } from 'utils/urlParser';
+
 class Listing extends Component {
   static refresh() {
     window.location.reload();
@@ -41,7 +43,7 @@ class Listing extends Component {
               <p>{author && `by ${author}`}</p>
             </div>
             <div>
-              {urlToImage && <img src={urlToImage} alt="" />}
+              {urlToImage && <img src={replaceHttpWithHttps(urlToImage)} alt="" />}
             </div>
           </div>
         )

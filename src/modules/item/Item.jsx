@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { history } from 'utils/history';
+
 class Item extends Component {
+  static goBack() {
+    history.goBack();
+  }
+
   static renderPlaceholder() {
     return (
       <div>
@@ -42,7 +48,7 @@ class Item extends Component {
 
     this.state = {
       currentIndex: id,
-    }
+    };
   }
 
   componentDidMount() {
@@ -62,11 +68,14 @@ class Item extends Component {
     const itemToRender = data[currentIndex];
 
     return (
-      <div className="item-details">
-        {shouldRenderPlaceholder ?
-          Item.renderPlaceholder() :
-          Item.renderDetails(itemToRender)
-        }
+      <div>
+        <i onClick={() => Item.goBack()} className="fas fa-chevron-left go-back" />
+        <div className="item-details">
+          {shouldRenderPlaceholder ?
+            Item.renderPlaceholder() :
+            Item.renderDetails(itemToRender)
+          }
+        </div>
       </div>
     );
   }

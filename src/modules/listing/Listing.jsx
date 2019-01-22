@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Listing extends Component {
+  static refresh() {
+    window.location.reload();
+  }
+
   static renderPlaceholders() {
     const placeholdersToRender = [];
 
@@ -52,16 +56,32 @@ class Listing extends Component {
     getNews();
   }
 
+  renderUpdatedDate() {
+    const { updatedAt } = this.props;
+
+    if (updatedAt) {
+      return (
+        <div className="listing-info">
+          <span className="updated-at"> Updated: {updatedAt}</span>
+          <i onClick={() => Listing.refresh()} className="fas fa-sync-alt" />
+        </div>
+      )
+    }
+  }
+
   render() {
     const { all: { data }, api } = this.props;
     const shouldRenderPlaceholders = api.request && !data.length;
 
     return (
-      <div className="listing">
-        {shouldRenderPlaceholders ?
-          Listing.renderPlaceholders() :
-          Listing.renderItems(data)
-        }
+      <div>
+        {this.renderUpdatedDate()}
+        <div className="listing">
+          {shouldRenderPlaceholders ?
+            Listing.renderPlaceholders() :
+            Listing.renderItems(data)
+          }
+        </div>
       </div>
     );
   }

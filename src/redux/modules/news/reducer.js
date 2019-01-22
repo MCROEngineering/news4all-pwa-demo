@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { getApiStatuses } from 'utils/redux';
 import * as c from './constants';
 
@@ -13,6 +14,7 @@ const initialState = {
     meta: {},
   },
   allApi: initialStatuses,
+  updatedAt: null,
 };
 
 const userReducer = (state = initialState, action = {}) => {
@@ -33,6 +35,7 @@ const userReducer = (state = initialState, action = {}) => {
           data: articles,
         },
         allApi: getApiStatuses('success'),
+        updatedAt: moment().fromNow(),
       };
     }
     case c.GET_ALL_NEWS.FAILURE:

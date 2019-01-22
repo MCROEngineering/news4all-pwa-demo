@@ -8,6 +8,7 @@ import Listing from './Listing';
 const mapStateToProps = state => ({
   all: newsState.selectors.all(state),
   api: newsState.selectors.allApi(state),
+  updatedAt: newsState.selectors.updatedAt(state),
 });
 
 const mapActionsToProps = dispatch =>

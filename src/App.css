@@ -113,6 +113,19 @@
   cursor: pointer;
 }
 
+.listing-info {
+  text-align: center;
+}
+
+.listing-info i {
+  cursor: pointer;
+  margin: 1em;
+}
+
+.updated-at {
+  color: gray;
+}
+
 @media (max-width: 680px) {
   .link-placeholder {
     width: 20em;

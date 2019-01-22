@@ -111,6 +111,7 @@
 
 .go-back {
   cursor: pointer;
+  padding: .3em;
 }
 
 .listing-info {

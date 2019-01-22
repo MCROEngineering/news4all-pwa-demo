@@ -7,7 +7,8 @@ import NewsListing from 'modules/listing';
 import NewsItem from 'modules/item';
 import Page404 from 'modules/404';
 
-import NavBar from 'components/Navbar';
+import Navbar from 'components/Navbar';
+import ScrollToTop from 'components/ScrollToTop';
 
 import './App.css';
 
@@ -15,15 +16,17 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <NavBar />
+        <Navbar />
         <div className="main">
           <Router history={history}>
-            <Switch>
-              <Route exact path="/" component={NewsListing} />
-              <Route path="/item/:id" name="Home" component={NewsItem} />
+            <ScrollToTop>
+              <Switch>
+                <Route exact path="/" component={NewsListing} />
+                <Route path="/item/:id" name="Home" component={NewsItem} />
 
-              <Route component={Page404} />
-            </Switch>
+                <Route component={Page404} />
+              </Switch>
+            </ScrollToTop>
           </Router>
         </div>
       </div>

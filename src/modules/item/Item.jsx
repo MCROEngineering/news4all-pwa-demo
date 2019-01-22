@@ -1,8 +1,40 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Item extends Component {
+  static renderPlaceholder() {
+    return (
+      <div>
+        <div className="image-placeholder-large" />
+        <p className="description-placeholder max-width" />
+        <p className="description-placeholder max-width" />
+        <p className="author-placeholder" />
+      </div>
+    );
+  }
+
+  static renderDetails(item) {
+    if (item) {
+      const { title, content, author, url, urlToImage } = item;
+
+      return (
+        <div>
+          <div>
+            {urlToImage && <img src={urlToImage} alt="" />}
+          </div>
+          <div>
+            <h3>{title}</h3>
+            <p>{content}</p>
+            <p>by {author}</p>
+          </div>
+          <div>Find out more at <a href={url}>original source</a>.</div>
+        </div>
+      )
+    }
+
+    return <div />;
+  }
+
   constructor(props) {
     super(props);
 
@@ -22,38 +54,27 @@ class Item extends Component {
   }
 
   render() {
-    const { all: { data } } = this.props;
+    const { all: { data }, api } = this.props;
     const { currentIndex } = this.state;
+
+    const shouldRenderPlaceholder = api.request && !data.length;
 
     const itemToRender = data[currentIndex];
 
-    if (itemToRender) {
-      const { title, content, author, url, urlToImage } = itemToRender;
-
-      return (
-        <div className="item-details">
-          <div>
-            {urlToImage && <img src={urlToImage} alt="" />}
-          </div>
-          <div>
-            <h3>{title}</h3>
-            <p>{content}</p>
-            <p>by {author}</p>
-          </div>
-          <div>Find out more at <a href={url}>original source</a>.</div>
-        </div>
-      );
-    } else {
-      return (
-        <div>Loading...</div>
-      )
-    }
-
+    return (
+      <div className="item-details">
+        {shouldRenderPlaceholder ?
+          Item.renderPlaceholder() :
+          Item.renderDetails(itemToRender)
+        }
+      </div>
+    );
   }
 }
 
 Item.propTypes = {
   all: PropTypes.shape({}).isRequired,
+  api: PropTypes.shape({}).isRequired,
   getNews: PropTypes.func.isRequired,
 };
 

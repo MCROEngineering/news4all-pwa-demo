@@ -176,12 +176,19 @@
   margin-bottom: 2em;
 }
 
-@media (max-width: 480px) {
-  .listing-item {
-    flex-wrap: wrap-reverse;
+@media (max-width: 750px) {
+  .app {
+    padding: 0 .5em;
+  }
+
+  .link-placeholder {
+    width: 20em;
+  }
+  .description-placeholder {
+    width: 20em;
   }
   .listing-item img {
-    max-width: 100%;
+    max-width: 150px;
   }
   .image-placeholder {
     float: left;
@@ -189,6 +196,12 @@
     width: 100%;
     margin-bottom: 1em;
     background-color: #dfdfdf;
+  }
+}
+
+@media (max-width: 480px) {
+  .listing-item img {
+    max-width: 100px;
   }
 }
 
@@ -213,15 +226,6 @@
 
 .updated-at {
   font-size: 14px;
-}
-
-@media (max-width: 680px) {
-  .link-placeholder {
-    width: 20em;
-  }
-  .description-placeholder {
-    width: 20em;
-  }
 }
 
 @keyframes App-logo-spin {

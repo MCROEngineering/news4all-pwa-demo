@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .item-details .content {
-  padding: 0 0 1em 0;
+  padding: 1em 0 1em 0;
   margin: auto;
   max-width: 680px;
 }
@@ -189,6 +189,9 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 750px) {
   .app {
     padding: 0 .5rem;
+  }
+  .header .right-side {
+    margin: auto;
   }
   .listing-item img {
     max-width: 150px;

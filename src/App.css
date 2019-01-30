@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
+a:focus {
+  color: gray !important;
+}
+
 .app {
   padding: 0 2rem;
 }
@@ -212,6 +216,10 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   color: #D0011B;
   width: fit-content;
+}
+
+.go-back:active {
+  opacity: 0.5;
 }
 
 .go-back i {

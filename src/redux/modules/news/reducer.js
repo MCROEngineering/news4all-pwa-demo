@@ -14,7 +14,7 @@ const initialState = {
     meta: {},
   },
   allApi: initialStatuses,
-  updatedAt: null,
+  updatedAt: '',
 };
 
 const userReducer = (state = initialState, action = {}) => {

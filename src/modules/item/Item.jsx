@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { history } from 'utils/history';
 
-import Img from 'components/Img';
+import Img from 'components/ImgWrapper';
 
 class Item extends Component {
   static goBack() {

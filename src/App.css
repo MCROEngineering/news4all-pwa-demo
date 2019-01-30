@@ -1,3 +1,11 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 .app {
   padding: 0 2em;
 }
@@ -9,6 +17,18 @@
 
 .header {
   margin: 1em 0;
+  display: flex;
+}
+
+.header .right-side {
+  margin-left: auto;
+  align-self: center;
+}
+
+.header .right-side i {
+  color: #D0011B;
+  cursor: pointer;
+  margin-left: 1em;
 }
 
 .logo {
@@ -18,9 +38,9 @@
 }
 
 .listing {
-  padding: 4em 0;
+  padding: 1em 0;
   margin: auto;
-  max-width: 680px;
+  max-width: 800px;
 }
 
 .listing a {
@@ -34,6 +54,36 @@
   border-bottom: 1px solid lightgray;
 }
 
+.listing-item .listing-item-content {
+  color: #000000d6;
+  margin-left: 1em;
+}
+
+.listing-item .listing-item-content h3 {
+  margin-bottom: 1em;
+}
+
+.listing-item .listing-item-content p {
+  margin-bottom: 1em;
+}
+
+.listing-item .listing-item-content .author-and-date {
+  color: #0000008a;
+  font-size: 15px;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.listing-item .listing-item-content .date i {
+  font-size: 15px;
+  padding-right: .4em;
+}
+
+.listing-item .listing-item-content .author-and-date span {
+  padding-right: .8em;
+  padding-left: .8em;
+}
+
 .listing-item:first-child {
   padding-top: 0;
 }
@@ -43,7 +93,7 @@
 }
 
 .listing-item img {
-  max-width: 170px;
+  max-width: 300px;
 }
 
 .link-placeholder {
@@ -118,13 +168,8 @@
   text-align: center;
 }
 
-.listing-info i {
-  cursor: pointer;
-  margin: 1em;
-}
-
 .updated-at {
-  color: gray;
+  font-size: 14px;
 }
 
 @media (max-width: 680px) {

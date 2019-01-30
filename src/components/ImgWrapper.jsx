@@ -1,8 +1,8 @@
 import React from 'react';
 import { replaceHttpWithHttps } from 'utils/urlParser';
 
-const Img = ({ src }) => (
+const ImgWrapper = ({ src }) => (
   src && <img src={replaceHttpWithHttps(src)} alt="" />
 );
 
-export default Img;
+export default ImgWrapper;

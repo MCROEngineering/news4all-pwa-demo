@@ -6,8 +6,15 @@
   box-sizing: inherit;
 }
 
+body { padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 .app {
-  padding: 0 2em;
+  padding: 0 2rem;
 }
 
 .main {
@@ -28,13 +35,13 @@
 .header .right-side i {
   color: #D0011B;
   cursor: pointer;
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 .logo {
   text-decoration: none;
   color: inherit;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .listing {
@@ -56,35 +63,35 @@
 
 .listing-item .listing-item-content {
   color: #000000d6;
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 .listing-item .listing-item-content h3 {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .listing-item .listing-item-content p {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .author-and-date {
   color: #0000008a;
-  font-size: 15px;
+  font-size: 14px;
   display: flex;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .author-and-date i {
-  padding-right: .4em;
+  padding-right: .4rem;
 }
 
 .listing-item .listing-item-content .date i {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .author-and-date span {
-  padding-right: .8em;
-  padding-left: .8em;
+  padding-right: .8rem;
+  padding-left: .8rem;
 }
 
 .listing-item:first-child {
@@ -99,37 +106,40 @@
   max-width: 300px;
 }
 
-.link-placeholder {
-  width: 28em;
-  height: .5em;
+.item-details .item-details-placeholder .title-placeholder {
+  height: 2rem;
   background-color: #dfdfdf;
+  margin-bottom: 2rem;
 }
 
 .description-placeholder {
-  width: 28em;
-  height: .5em;
+  height: .5rem;
   background-color: #dfdfdf;
+  margin-bottom: 1rem;
 }
 
 .author-placeholder {
-  width: 20em;
-  height: .5em;
+  width: 30%;
+  height: .5rem;
   background-color: #dfdfdf;
 }
 
 .image-placeholder {
-  width: 10em;
-  float: right;
-  margin-left: auto;
-  height: 5em;
+  height: 8rem;
   background-color: #dfdfdf;
+}
+
+.listing-item .link-placeholder {
+  height: 1rem;
+  background-color: #dfdfdf;
+  margin-bottom: 1rem;
 }
 
 .image-placeholder-large {
   width: 100%;
-  height: 15em;
+  height: 20rem;
   background-color: #dfdfdf;
-  margin-bottom: 1em;
+  margin-bottom: 2rem;
 }
 
 .max-width {
@@ -137,23 +147,23 @@
 }
 
 .item-details {
-  padding-top: 1em;
+  padding-top: 1rem;
 }
 
 .item-details .author-and-date {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 .item-details h2 {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .item-details p {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .item-details {
-  padding-top: 1em;
+  padding-top: 1rem;
 }
 
 .item-details .original-source {
@@ -173,29 +183,19 @@
 
 .item-details .content img {
   max-width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 750px) {
   .app {
-    padding: 0 .5em;
-  }
-
-  .link-placeholder {
-    width: 20em;
-  }
-  .description-placeholder {
-    width: 20em;
+    padding: 0 .5rem;
   }
   .listing-item img {
     max-width: 150px;
   }
   .image-placeholder {
-    float: left;
-    height: 8em;
-    width: 100%;
-    margin-bottom: 1em;
-    background-color: #dfdfdf;
+    margin-left: 1.5rem;
+    height: 4rem;
   }
 }
 
@@ -217,7 +217,7 @@
 
 .go-back span {
   font-weight: 500;
-  margin-left: .4em;
+  margin-left: .4rem;
 }
 
 .listing-info {

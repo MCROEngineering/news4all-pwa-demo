@@ -11,13 +11,13 @@ class Listing extends Component {
 
     for (let i = 0; i < 5; i++) {
       placeholdersToRender.push(
-        <div key={i} className="listing-item">
-          <div>
+        <div key={i} className="listing-item row">
+          <div className="image-placeholder col-md-4 col-xs-2" />
+          <div className="col-md-8 col-xs-10">
             <div className="link-placeholder" />
             <p className="description-placeholder" />
             <p className="author-placeholder" />
           </div>
-          <div className="image-placeholder" />
         </div>
       );
     }
@@ -62,19 +62,6 @@ class Listing extends Component {
 
     getNews();
   }
-
-  // renderUpdatedDate() {
-  //   const { updatedAt } = this.props;
-  //
-  //   if (updatedAt) {
-  //     return (
-  //       <div className="listing-info">
-  //         <span className="updated-at"> Updated: {updatedAt}</span>
-  //         <i title="Reload news" onClick={() => Listing.refresh()} className="fas fa-sync-alt" />
-  //       </div>
-  //     )
-  //   }
-  // }
 
   render() {
     const { all: { data }, api } = this.props;

@@ -13,8 +13,10 @@ class Item extends Component {
 
   static renderPlaceholder() {
     return (
-      <div>
+      <div className="item-details-placeholder">
+        <p className="title-placeholder max-width" />
         <div className="image-placeholder-large" />
+        <p className="description-placeholder max-width" />
         <p className="description-placeholder max-width" />
         <p className="description-placeholder max-width" />
         <p className="author-placeholder" />

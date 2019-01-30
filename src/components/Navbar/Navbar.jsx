@@ -9,7 +9,7 @@ class Navbar extends Component {
   }
 
   render() {
-      const { updatedAt } = this.props;
+    const { updatedAt } = this.props;
 
     return (
       <div className="header">

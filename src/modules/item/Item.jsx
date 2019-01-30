@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import { history } from 'utils/history';
 
@@ -23,19 +24,23 @@ class Item extends Component {
 
   static renderDetails(item) {
     if (item) {
-      const { title, content, author, url, urlToImage } = item;
+      const { title, content, description, author, url, urlToImage, publishedAt } = item;
+      const publishDate = moment(publishedAt).fromNow();
 
       return (
         <div>
-          <div>
-            <Img src={urlToImage} />
+          <h2>{title}</h2>
+          <div className="author-and-date">
+            <div>{author && `by ${author}`}</div>
+            {author && <span>|</span>}
+            <div className="date">
+              <i className="far fa-calendar" />
+              {publishDate}
+            </div>
           </div>
-          <div>
-            <h3>{title}</h3>
-            <p>{content}</p>
-            <p>by {author}</p>
-          </div>
-          <div>Find out more at <a href={url}>original source</a>.</div>
+          <Img src={urlToImage} />
+          <p>{content || description}</p>
+          <div className="original-source"><a href={url}>View original source</a>.</div>
         </div>
       )
     }
@@ -70,9 +75,12 @@ class Item extends Component {
     const itemToRender = data[currentIndex];
 
     return (
-      <div>
-        <i onClick={() => Item.goBack()} className="fas fa-chevron-left go-back" />
-        <div className="item-details">
+      <div className="item-details">
+        <div className="go-back" onClick={() => Item.goBack()} >
+          <i className="fas fa-chevron-left" />
+          <span>Back</span>
+        </div>
+        <div className="content">
           {shouldRenderPlaceholder ?
             Item.renderPlaceholder() :
             Item.renderDetails(itemToRender)

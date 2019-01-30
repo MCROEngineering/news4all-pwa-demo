@@ -12,7 +12,7 @@
 
 .main {
   border-top: 1px solid lightgray;
-  padding: 1em 0;
+  padding: 1em 0 4em 0;
 }
 
 .header {
@@ -67,19 +67,22 @@
   margin-bottom: 1em;
 }
 
-.listing-item .listing-item-content .author-and-date {
+.author-and-date {
   color: #0000008a;
   font-size: 15px;
   display: flex;
   margin-bottom: 1em;
 }
 
-.listing-item .listing-item-content .date i {
-  font-size: 15px;
+.author-and-date i {
   padding-right: .4em;
 }
 
-.listing-item .listing-item-content .author-and-date span {
+.listing-item .listing-item-content .date i {
+  font-size: 15px;
+}
+
+.author-and-date span {
   padding-right: .8em;
   padding-left: .8em;
 }
@@ -134,13 +137,43 @@
 }
 
 .item-details {
-  padding: 4em 0;
+  padding-top: 1em;
+}
+
+.item-details .author-and-date {
+  margin-bottom: 2em;
+}
+
+.item-details h2 {
+  margin-bottom: 1em;
+}
+
+.item-details p {
+  margin-bottom: 1em;
+}
+
+.item-details {
+  padding-top: 1em;
+}
+
+.item-details .original-source {
+  color: #D0011B;
+}
+
+.item-details .original-source a {
+  color: inherit;
+  font-weight: 500;
+}
+
+.item-details .content {
+  padding: 0 0 1em 0;
   margin: auto;
   max-width: 680px;
 }
 
-.item-details img {
+.item-details .content img {
   max-width: 100%;
+  margin-bottom: 2em;
 }
 
 @media (max-width: 480px) {
@@ -161,7 +194,17 @@
 
 .go-back {
   cursor: pointer;
-  padding: .3em;
+  color: #D0011B;
+  width: fit-content;
+}
+
+.go-back i {
+  padding: 0 .3em 0 0;
+}
+
+.go-back span {
+  font-weight: 500;
+  margin-left: .4em;
 }
 
 .listing-info {

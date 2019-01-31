@@ -14,12 +14,18 @@ class Navbar extends Component {
 
     return (
       <div className="header">
-        <a className="logo" href="/">
+        <a href="/">
           <img src={Logo} width="48" alt="News4All" />
         </a>
-        <div className="right-side">
-          <span className="updated-at">{updatedAtLabel}</span>
-          <i title="Reload news" onClick={() => Navbar.refresh()} className="fas fa-sync-alt" />
+        <div className="header__right-side">
+          <span className="header__updated-at">
+            {updatedAtLabel}
+          </span>
+          <i
+            className="fas fa-sync-alt pointer"
+            title="Reload news"
+            onClick={() => Navbar.refresh()}
+          />
         </div>
       </div>
     );

@@ -1,9 +1,10 @@
-@import "components/img-wrapper";
+@import "variables";
+
+@import "base";
+
 @import "components/navbar";
 
 @import "modules/404";
 @import "modules/item";
 @import "modules/listing";
 
-@import "base";
-@import "variables";

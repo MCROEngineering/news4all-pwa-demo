@@ -21,15 +21,18 @@ code {
   box-sizing: inherit;
 }
 
-body { padding: 0; }
+html {
+  /* We should refer to the font-size value given by the browser. Some users customize the browser's font-size. */
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
   margin-top: 0;
-}
-
-a:focus {
-  color: gray !important;
 }
 
 .app {
@@ -37,30 +40,15 @@ a:focus {
 }
 
 .main {
-  border-top: 1px solid lightgray;
   padding: 1em 0 10em 0;
 }
 
-.header {
-  margin: 1em 0;
-  display: flex;
-}
-
-.header .right-side {
-  margin-left: auto;
-  align-self: center;
-}
-
-.header .right-side i {
-  color: #D0011B;
+.pointer {
   cursor: pointer;
-  margin-left: 1rem;
 }
 
-.logo {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1.5rem;
+a:focus {
+  color: gray !important;
 }
 
 .listing {
@@ -250,7 +238,7 @@ a:focus {
   text-align: center;
 }
 
-.updated-at {
+.header__updated-at {
   font-size: 14px;
 }
 

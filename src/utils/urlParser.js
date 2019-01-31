@@ -1,3 +1,1 @@
-export const replaceHttpWithHttps = (url) => {
- return url.replace('http://', 'https://');
-};
+export const replaceHttpWithHttps = url => url.replace('http://', 'https://');

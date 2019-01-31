@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 
 import { history } from 'utils/history';
 
+import AuthorAndDate from 'components/AuthorAndDate';
 import Img from 'components/ImgWrapper';
 
 class Item extends Component {
@@ -13,9 +13,9 @@ class Item extends Component {
 
   static renderPlaceholder() {
     return (
-      <div className="item-details-placeholder">
-        <p className="title-placeholder max-width" />
-        <div className="image-placeholder-large" />
+      <div>
+        <p className="item-details__title-placeholder max-width" />
+        <div className="item-details__image-placeholder max-width" />
         <p className="description-placeholder max-width" />
         <p className="description-placeholder max-width" />
         <p className="description-placeholder max-width" />
@@ -27,22 +27,21 @@ class Item extends Component {
   static renderDetails(item) {
     if (item) {
       const { title, content, description, author, url, urlToImage, publishedAt } = item;
-      const publishDate = moment(publishedAt).fromNow();
 
       return (
         <div>
           <h2>{title}</h2>
-          <div className="author-and-date">
-            <div>{author && `by ${author}`}</div>
-            {author && <span>|</span>}
-            <div className="date">
-              <i className="far fa-calendar" />
-              {publishDate}
-            </div>
-          </div>
+
+          <AuthorAndDate
+            author={author}
+            publishedAt={publishedAt}
+          />
+
           <Img src={urlToImage} />
+
           <p>{content || description}</p>
-          <div className="original-source">
+
+          <div className="item-details__original-source">
             <a href={url}>View original source</a>
             .
           </div>
@@ -81,11 +80,11 @@ class Item extends Component {
 
     return (
       <div className="item-details">
-        <div className="go-back" onClick={() => Item.goBack()} >
+        <div className="item-details__go-back pointer" onClick={() => Item.goBack()}>
           <i className="fas fa-chevron-left" />
           <span>Back</span>
         </div>
-        <div className="content">
+        <div className="item-details__content">
           {shouldRenderPlaceholder
             ? Item.renderPlaceholder()
             : Item.renderDetails(itemToRender)

@@ -15,8 +15,8 @@ class Listing extends Component {
           <div className="listing__image-placeholder col-md-4 col-xs-2" />
           <div className="col-md-8 col-xs-10">
             <div className="listing__link-placeholder" />
-            <p className="listing__description-placeholder" />
-            <p className="listing__author-placeholder" />
+            <p className="description-placeholder" />
+            <p className="author-placeholder" />
           </div>
         </div>,
       );

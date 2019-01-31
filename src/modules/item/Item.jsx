@@ -42,9 +42,12 @@ class Item extends Component {
           </div>
           <Img src={urlToImage} />
           <p>{content || description}</p>
-          <div className="original-source"><a href={url}>View original source</a>.</div>
+          <div className="original-source">
+            <a href={url}>View original source</a>
+            .
+          </div>
         </div>
-      )
+      );
     }
 
     return <div />;
@@ -83,9 +86,9 @@ class Item extends Component {
           <span>Back</span>
         </div>
         <div className="content">
-          {shouldRenderPlaceholder ?
-            Item.renderPlaceholder() :
-            Item.renderDetails(itemToRender)
+          {shouldRenderPlaceholder
+            ? Item.renderPlaceholder()
+            : Item.renderDetails(itemToRender)
           }
         </div>
       </div>
@@ -97,6 +100,7 @@ Item.propTypes = {
   all: PropTypes.shape({}).isRequired,
   api: PropTypes.shape({}).isRequired,
   getNews: PropTypes.func.isRequired,
+  match: PropTypes.shape({}).isRequired,
 };
 
 export default Item;

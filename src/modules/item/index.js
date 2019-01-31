@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Item from './Item';
-
 import newsState from 'redux/modules/news';
+
+import Item from './Item';
 
 const mapStateToProps = state => ({
   all: newsState.selectors.all(state),

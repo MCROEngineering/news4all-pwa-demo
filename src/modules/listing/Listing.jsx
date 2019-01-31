@@ -9,7 +9,7 @@ class Listing extends Component {
   static renderPlaceholders() {
     const placeholdersToRender = [];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i += 1) {
       placeholdersToRender.push(
         <div key={i} className="listing-item row">
           <div className="image-placeholder col-md-4 col-xs-2" />
@@ -18,7 +18,7 @@ class Listing extends Component {
             <p className="description-placeholder" />
             <p className="author-placeholder" />
           </div>
-        </div>
+        </div>,
       );
     }
 
@@ -32,7 +32,7 @@ class Listing extends Component {
         const publishDate = moment(publishedAt).fromNow();
 
         return (
-          <div className="listing-item" key={index}>
+          <div className="listing-item" key={title}>
             <div>
               <Img src={urlToImage} />
             </div>
@@ -46,14 +46,14 @@ class Listing extends Component {
                 <div className="date">
                   <i className="far fa-calendar" />
                   {publishDate}
-                  </div>
+                </div>
               </div>
               <p>{description}</p>
             </div>
           </div>
-        )
+        );
       })
-    )
+    );
   }
 
 
@@ -70,9 +70,9 @@ class Listing extends Component {
     return (
       <div>
         <div className="listing">
-          {shouldRenderPlaceholders ?
-            Listing.renderPlaceholders() :
-            Listing.renderItems(data)
+          {shouldRenderPlaceholders
+            ? Listing.renderPlaceholders()
+            : Listing.renderItems(data)
           }
         </div>
       </div>

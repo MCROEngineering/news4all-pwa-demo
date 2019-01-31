@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Logo from 'assets/images/logo.png';
-import PropTypes from "prop-types";
 
 class Navbar extends Component {
   static refresh() {
@@ -10,6 +10,7 @@ class Navbar extends Component {
 
   render() {
     const { updatedAt } = this.props;
+    const updatedAtLabel = `Updated: ${updatedAt}`;
 
     return (
       <div className="header">
@@ -17,11 +18,11 @@ class Navbar extends Component {
           <img src={Logo} width="48" alt="News4All" />
         </a>
         <div className="right-side">
-          <span className="updated-at"> Updated: {updatedAt}</span>
+          <span className="updated-at">{updatedAtLabel}</span>
           <i title="Reload news" onClick={() => Navbar.refresh()} className="fas fa-sync-alt" />
         </div>
       </div>
-    )
+    );
   }
 }
 

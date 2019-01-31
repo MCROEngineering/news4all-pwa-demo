@@ -40,77 +40,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main {
-  padding: 1em 0 10em 0;
+  padding: 2em 0 10em 0;
 }
 
 .pointer {
   cursor: pointer;
 }
 
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 a:focus {
   color: gray !important;
-}
-
-.listing {
-  padding: 1em 0;
-  margin: auto;
-  max-width: 800px;
-}
-
-.listing a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.listing-item {
-  padding: 1em 0;
-  display: flex;
-  border-bottom: 1px solid lightgray;
-}
-
-.listing-item .listing-item-content {
-  color: #000000d6;
-  margin-left: 1rem;
-}
-
-.listing-item .listing-item-content h3 {
-  margin-bottom: 1rem;
-}
-
-.listing-item .listing-item-content p {
-  margin-bottom: 1rem;
-}
-
-.author-and-date {
-  color: #0000008a;
-  font-size: 14px;
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.author-and-date i {
-  padding-right: .4rem;
-}
-
-.listing-item .listing-item-content .date i {
-  font-size: 14px;
-}
-
-.author-and-date span {
-  padding-right: .8rem;
-  padding-left: .8rem;
-}
-
-.listing-item:first-child {
-  padding-top: 0;
-}
-
-.listing-item:last-child {
-  border-bottom: 0;
-}
-
-.listing-item img {
-  max-width: 300px;
 }
 
 .item-details .item-details-placeholder .title-placeholder {
@@ -125,21 +68,11 @@ a:focus {
   margin-bottom: 1rem;
 }
 
+
 .author-placeholder {
   width: 30%;
   height: .5rem;
   background-color: #dfdfdf;
-}
-
-.image-placeholder {
-  height: 8rem;
-  background-color: #dfdfdf;
-}
-
-.listing-item .link-placeholder {
-  height: 1rem;
-  background-color: #dfdfdf;
-  margin-bottom: 1rem;
 }
 
 .image-placeholder-large {
@@ -155,10 +88,6 @@ a:focus {
 
 .item-details {
   padding-top: 1rem;
-}
-
-.item-details .author-and-date {
-  margin-bottom: 2rem;
 }
 
 .item-details h2 {
@@ -197,22 +126,6 @@ a:focus {
   .app {
     padding: 0 .5rem;
   }
-  .header .right-side {
-    margin: auto;
-  }
-  .listing-item img {
-    max-width: 150px;
-  }
-  .image-placeholder {
-    margin-left: 1.5rem;
-    height: 4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .listing-item img {
-    max-width: 100px;
-  }
 }
 
 .go-back {
@@ -232,14 +145,6 @@ a:focus {
 .go-back span {
   font-weight: 500;
   margin-left: .4rem;
-}
-
-.listing-info {
-  text-align: center;
-}
-
-.header__updated-at {
-  font-size: 14px;
 }
 
 @keyframes App-logo-spin {

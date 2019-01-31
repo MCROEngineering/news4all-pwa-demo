@@ -1,0 +1,20 @@
+.author-and-date {
+  color: $color-gray-dark;
+  display: flex;
+  font-size: $font-size-small;
+  margin-bottom: $margin-bottom-content;
+
+  i {
+    padding-right: .4rem;
+  }
+
+  span {
+    padding-right: .8rem;
+    padding-left: .8rem;
+  }
+
+}
+
+.item-details .author-and-date {
+  margin-bottom: 2rem;
+}

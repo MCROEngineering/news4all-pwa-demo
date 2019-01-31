@@ -1,7 +1,7 @@
 .header {
   border-bottom: 1px solid $color-gray-light;
   display: flex;
-  padding: 1rem 0;
+  padding: 1.4rem 0;
 
   .header__right-side {
     align-self: center;
@@ -14,6 +14,14 @@
 
     .header__updated-at {
       font-size: $font-size-small;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .header {
+    .header__right-side {
+      margin: auto;
     }
   }
 }

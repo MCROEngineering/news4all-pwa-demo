@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 
+import AuthorAndDate from 'components/AuthorAndDate';
 import Img from 'components/ImgWrapper';
 
 class Listing extends Component {
@@ -11,12 +11,12 @@ class Listing extends Component {
 
     for (let i = 0; i < 5; i += 1) {
       placeholdersToRender.push(
-        <div key={i} className="listing-item row">
-          <div className="image-placeholder col-md-4 col-xs-2" />
+        <div key={i} className="listing__item row">
+          <div className="listing__image-placeholder col-md-4 col-xs-2" />
           <div className="col-md-8 col-xs-10">
-            <div className="link-placeholder" />
-            <p className="description-placeholder" />
-            <p className="author-placeholder" />
+            <div className="listing__link-placeholder" />
+            <p className="listing__description-placeholder" />
+            <p className="listing__author-placeholder" />
           </div>
         </div>,
       );
@@ -29,25 +29,25 @@ class Listing extends Component {
     return (
       data.map((item, index) => {
         const { title, description, author, urlToImage, publishedAt } = item;
-        const publishDate = moment(publishedAt).fromNow();
 
         return (
-          <div className="listing-item" key={title}>
+          <div className="listing__item" key={title}>
             <div>
               <Img src={urlToImage} />
             </div>
-            <div className="listing-item-content">
-              <Link to={`/item/${index}`}>
-                <h3>{title}</h3>
-              </Link>
-              <div className="author-and-date">
-                <div>{author && `by ${author}`}</div>
-                {author && <span>|</span>}
-                <div className="date">
-                  <i className="far fa-calendar" />
-                  {publishDate}
-                </div>
+
+            <div className="listing__content">
+              <div>
+                <Link to={`/item/${index}`}>
+                  <h3>{title}</h3>
+                </Link>
               </div>
+
+              <AuthorAndDate
+                author={author}
+                publishedAt={publishedAt}
+              />
+
               <p>{description}</p>
             </div>
           </div>
@@ -68,13 +68,11 @@ class Listing extends Component {
     const shouldRenderPlaceholders = api.request && !data.length;
 
     return (
-      <div>
-        <div className="listing">
-          {shouldRenderPlaceholders
-            ? Listing.renderPlaceholders()
-            : Listing.renderItems(data)
-          }
-        </div>
+      <div className="listing">
+        {shouldRenderPlaceholders
+          ? Listing.renderPlaceholders()
+          : Listing.renderItems(data)
+        }
       </div>
     );
   }

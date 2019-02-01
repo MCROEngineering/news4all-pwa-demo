@@ -6,15 +6,15 @@ A live example can be found [here](https://build-3xa5bx12u.now.sh).
 
 ## Demo
 
-Desktop
+#### Desktop
 
 ![](./demo/demo_news4all_Desktop.gif)
 
-Android 
+#### Android 
 
 ![](./demo/demo_news4all_Android.gif)
 
-iOS
+#### iOS
 
 ![](./demo/demo_news4all_iOS.gif)
 

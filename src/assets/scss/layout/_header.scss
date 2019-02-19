@@ -3,7 +3,13 @@
   display: flex;
   padding: 1.4rem 0;
 
-  .header__right-side {
+  @include respond(tab-port) {
+    &__right-side {
+      margin: auto;
+    }
+  }
+
+  &__right-side {
     align-self: center;
     margin-left: auto;
 
@@ -11,17 +17,9 @@
       color: $color-primary;
       margin-left: $margin-left-icon;
     }
-
-    .header__updated-at {
-      font-size: $font-size-small;
-    }
   }
-}
 
-@media (max-width: 750px) {
-  .header {
-    .header__right-side {
-      margin: auto;
-    }
+  &__updated-at {
+    font-size: $font-size-small;
   }
 }

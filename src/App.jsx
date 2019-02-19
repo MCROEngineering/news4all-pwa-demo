@@ -10,7 +10,7 @@ import Page404 from 'modules/404';
 import Navbar from 'components/Navbar';
 import ScrollToTop from 'components/ScrollToTop';
 
-import 'assets/scss/index.scss';
+import 'assets/scss/main.scss';
 
 const App = () => (
   <div className="app">

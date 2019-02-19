@@ -1,11 +1,9 @@
 .item-details {
-  padding-top: 1rem;
-
   h2, p {
     margin-bottom: $margin-bottom-content;
   }
 
-  .item-details__content {
+  &__content {
     margin: auto;
     max-width: 68rem;
     padding: 1em 0 1em 0;
@@ -16,7 +14,7 @@
     }
   }
 
-  .item-details__original-source {
+  &__original-source {
     color: $color-primary;
 
     a {
@@ -28,7 +26,7 @@
     }
   }
 
-  .item-details__go-back {
+  &__go-back {
     color: $color-primary;
     width: fit-content;
 
@@ -46,13 +44,13 @@
     }
   }
 
-  .item-details__title-placeholder {
+  &__title-placeholder {
     background-color: $color-gray-light;
     height: 2rem;
     margin-bottom: $margin-bottom-content-x2;
   }
 
-  .item-details__image-placeholder {
+  &__image-placeholder {
     background-color: $color-gray-light;
     height: 20rem;
     margin-bottom: $margin-bottom-content-x2;

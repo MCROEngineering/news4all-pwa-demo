@@ -1,0 +1,73 @@
+.listing {
+  margin: auto;
+  max-width: 80rem;
+
+  @include respond(tab-port) {
+    &__image-placeholder {
+      margin-left: 1.5rem;
+      height: 4rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding: 2rem 0;
+
+    img {
+      max-width: 30rem;
+    }
+
+    @include respond(tab-port) {
+      img {
+        max-width: 15rem;
+      }
+    }
+
+    @include respond(phone) {
+      img {
+        max-width: 10rem;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-gray-lighter;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__content {
+    color: #000000d6;
+    margin-left: 1rem;
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: $margin-bottom-content;
+      }
+    }
+
+    .date {
+      i {
+        font-size: $font-size-small;
+      }
+    }
+
+    p {
+      font-size: $font-size-small;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-placeholder {
+    background-color: $color-gray-default;
+    height: 8rem;
+  }
+
+  &__link-placeholder {
+    background-color: $color-gray-default;
+    height: 1rem;
+    margin-bottom: $margin-bottom-content;
+  }
+}

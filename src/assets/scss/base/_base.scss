@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+html {
+  /* We should refer to the font-size value given by the browser. Some users customize the browser's font-size. */
+  font-size: 62.5%;
+
+  @include respond(tab-land) { // width < 1200px ?
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) { // width < 750px ?
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px, 12/16 = 75%
+  }
+}
+
+body {
+  padding: 0 2rem;
+
+  @include respond(tab-port) {
+    padding: 0 .5rem;
+  }
+
+  .app {
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:focus {
+        color: $color-gray-dark;
+      }
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
